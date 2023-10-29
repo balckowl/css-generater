@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { css } from '@emotion/react'
 import './BoxShadow.scss'
 import { AuthContext } from '../../Context/AuthContext';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../../api/firebase';
 
 const BoxShadow = () => {
@@ -36,10 +36,20 @@ const BoxShadow = () => {
   const sendFavBoxShadow = async () => {
     const { uid, displayName } = user;
 
-    await setDoc(doc(db, "user", uid), {
-      displayName,
-      boxShadowCode,
-    })
+    const userDocRef = doc(db, "user", uid);
+
+    const userDocSnap = await getDoc(userDocRef);
+
+    if (!userDocSnap.exists()) {
+      await setDoc(userDocRef, {
+        displayName,
+        boxShadowCode,
+      })
+    } else {
+      await updateDoc(userDocRef, {
+        boxShadowCode,
+      })
+    }
 
     alert('登録されました。')
   }
