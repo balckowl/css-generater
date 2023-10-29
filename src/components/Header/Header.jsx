@@ -3,6 +3,7 @@ import './Header.scss'
 import LoginBtn from '../LoginBtn/LoginBtn'
 import { AuthContext } from '../../Context/AuthContext';
 import LogoutBtn from '../LogoutBtn/LogoutBtn';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -19,7 +20,7 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="top-name align-self-center fs-2">
-                            <a className="navbar-brand" href="#">CSS Generater</a>
+                            <Link className="navbar-brand" to="/">CSS Generater</Link>
                         </div>
                     </div>
                     <div className="d-flex gap-2">
