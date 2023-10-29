@@ -14,8 +14,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/box-shadow" element={<BoxShadow />} />
-          <Route path="/liner-gradient" element={<LinerGradient />}/>
+          <Route path="/boxshadow" element={<BoxShadow />} />
+          <Route path="/linergradient" element={<LinerGradient />}/>
         </Routes>
         <Footer />
       </Router>
