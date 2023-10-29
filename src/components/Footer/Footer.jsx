@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import './Footer.scss'
 
 const Footer = () => {
     return (
@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center m-1">
                     <div className="align-self-center">
                         <div className="top-icon px-2">
-                            <i class="bi bi-gear"></i>
+                            <i className="bi bi-gear"></i>
                         </div>
                     </div>
                     <div className="top-name align-self-center fs-2">
