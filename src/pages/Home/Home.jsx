@@ -14,7 +14,7 @@ const Home = () => {
                     <div className="col-sm-4">
                         <div className="card">
                             <div className="card-body">
-                                <Link to="/liner-gradient">
+                                <Link to="/linergradient">
                                     <h3 className="card-title">liner-gradient</h3>
                                     <div className="card-icon text-center">
                                         <i className="bi bi-brush"></i>
