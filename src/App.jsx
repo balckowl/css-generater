@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 import Footer from './components/Footer/Footer'
 import BoxShadow from './pages/BoxShadow/BoxShadow'
 import LinerGradient from './pages/LinerGradient/LinerGradient'
+import QRcode from './pages/QRCode/QRcode'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/boxshadow" element={<BoxShadow />} />
           <Route path="/linergradient" element={<LinerGradient />}/>
+          <Route path="/qrcode" element={<QRcode />}/>
         </Routes>
         <Footer />
       </Router>

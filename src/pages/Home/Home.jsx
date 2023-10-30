@@ -26,7 +26,6 @@ const Home = () => {
                     </div>
                     <div className="col-sm-4">
                         <div className="card">
-
                             <div className="card-body">
                                 <Link to="/boxshadow">
                                     <h3 className="card-title">box-shadow</h3>
@@ -40,7 +39,19 @@ const Home = () => {
                     </div>
                     <div className="col-sm-4">
                         <div className="card">
-
+                            <div className="card-body">
+                                <Link to="/qrcode">
+                                    <h3 className="card-title">QRcode-generater</h3>
+                                    <div className="card-icon text-center">
+                                        <i className="bi bi-qr-code-scan"></i>
+                                    </div>
+                                    <p className="card-text"></p>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="card">
                             <div className="card-body">
                                 <h3 className="card-title">flex-container</h3>
                                 <div className="card-icon text-center">
@@ -52,7 +63,6 @@ const Home = () => {
                     </div>
                     <div className="col-sm-4">
                         <div className="card">
-
                             <div className="card-body">
                                 <h3 className="card-title">talk-to-AI</h3>
                                 <div className="card-icon text-center">
