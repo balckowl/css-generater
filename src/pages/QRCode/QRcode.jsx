@@ -5,15 +5,17 @@ import QRCode from 'qrcode.react'
 const QRcode = () => {
 
     const [url, setURL] = useState('https://example.com')
+    const [bgColor, setBgColor] = useState("#FFFFFF")
+    const [fgColor, setFgColor] = useState("#000000")
 
     const downloadQR = () => {
-        const canvas = document.getElementById("123456");
+        const canvas = document.getElementById("qrcode");
         const pngUrl = canvas
             .toDataURL("image/png")
             .replace("image/png", "image/octet-stream");
         let downloadLink = document.createElement("a");
         downloadLink.href = pngUrl;
-        downloadLink.download = "123456.png";
+        downloadLink.download = "qrcode.png";
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
@@ -28,14 +30,24 @@ const QRcode = () => {
 
                             <div>
                                 <QRCode
-                                    id="123456"
-                                    value="123456"
+                                    id="qrcode"
+                                    value={url}
                                     size={290}
                                     level={"H"}
-                                    bgColor={"#FF0000"}
-                                    fgColor={"#FFC0CB"}
+                                    bgColor={bgColor}
+                                    fgColor={fgColor}
                                     includeMargin={true}
                                 />
+
+                                <div>
+                                    <h3>背景色</h3>
+                                    <input type="color" value={bgColor} onChange={(e) => setBgColor(e.target.value)}/>
+                                </div>
+
+                                <div>
+                                    <h3>前景色</h3>
+                                    <input type="color" value={fgColor} onChange={(e) => setFgColor(e.target.value)}/>
+                                </div>
                             </div>
 
                             <form action="">
