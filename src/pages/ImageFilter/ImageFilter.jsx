@@ -91,6 +91,10 @@ const ImageFilter = () => {
 
         const userDocSnap = await getDoc(userDocRef);
 
+        if(!imgFilterString()){
+            alert('パラメータが変更されていません。')
+        }
+
         if (!userDocSnap.exists()) {
             await setDoc(userDocRef, {
                 displayName,
