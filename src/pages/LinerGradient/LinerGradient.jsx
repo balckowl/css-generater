@@ -107,40 +107,43 @@ const LinerGradient = () => {
                     </div>
                   </div>
 
-                  <div className='liner-box row g-0 justify-content-between p-2'>
-                    <div className="col-lg-6">
-                      <div className="row g-0 justify-content-center gap-3">
-                        <div className="col-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
-                        <div className="col-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
-                        <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
+                  <div className='row justify-content-center'>
+                    <div className='col-lg-10 p-2 liner-box'>
+                      <div className="row g-0 justify-content-between">
+                        <div className="col-lg-6">
+                          <div className="row g-0 justify-content-center gap-3">
+                            <div className="col-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
+                            <div className="col-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
+                            <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
+                          </div>
+                        </div>
+                        <div className="col-lg-4 d-flex align-items-center justify-content-center">
+                          <button className='me-2' onClick={addColorField}>カラーフィールド+</button>
+                          <button onClick={removeColorField}>カラーフィールド-</button>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-lg-4 d-flex align-items-center justify-content-center">
-                      <button className='me-2' onClick={addColorField}>カラーフィールド+</button>
-                      <button onClick={removeColorField}>カラーフィールド-</button>
-                    </div>
-
-
-
                   </div>
 
                   <div className="row g-0 gap-0">
                     {colorFields.map((CF, index) => (
-                      <div className='liner-box my-2 col-lg-3 p-1' key={index}>
-                        <div className=''>
-                          <h3>colorField{index + 1}</h3>
-                          <div>
-
+                      <div className='my-2 col-lg-3' key={index}>
+                        <div className='row d-flex align-items-center justify-content-center g-0'>
+                          <div className="col-11 liner-box p-1">
+                            <h3>colorField{index + 1}</h3>
                             <div>
-                              <h3>カラー</h3>
-                              <p>{CF.color}</p>
-                              <input type="color" value={CF.color} onChange={(e) => updateColorField(index, 'color', e.target.value)} />
-                            </div>
 
-                            <div>
-                              <h3>終始位置</h3>
-                              <p>{CF.endPoint}%</p>
-                              <input type="range" value={CF.endPoint} onChange={(e) => updateColorField(index, 'endPoint', e.target.value)} />
+                              <div>
+                                <h3>カラー</h3>
+                                <p>{CF.color}</p>
+                                <input type="color" value={CF.color} onChange={(e) => updateColorField(index, 'color', e.target.value)} />
+                              </div>
+
+                              <div>
+                                <h3>終始位置</h3>
+                                <p>{CF.endPoint}%</p>
+                                <input type="range" value={CF.endPoint} onChange={(e) => updateColorField(index, 'endPoint', e.target.value)} />
+                              </div>
                             </div>
                           </div>
                         </div>
