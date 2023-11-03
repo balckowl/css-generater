@@ -10,8 +10,8 @@ const LinerGradient = () => {
 
   const { user } = useContext(AuthContext);
 
-  const [degree, setDegree] = useState(0)
-  const [colorFields, setColorFields] = useState([{ color: "#FFC778", endPoint: "50" }, { color: "#FFC778", endPoint: "50" }])
+  const [degree, setDegree] = useState(30)
+  const [colorFields, setColorFields] = useState([{ color: "#d17aff", endPoint: "20" }, { color: "#7ae4ff", endPoint: "80" }])
 
   const generateGradientString = () => {
     const baseGradient = `${degree}deg`;
@@ -25,12 +25,11 @@ const LinerGradient = () => {
 
   const linerGradientStyle = css({
     width: "100%",
-    height: "200px",
     background: `linear-gradient(${generateGradientString()})`,
   })
 
   const addColorField = () => {
-    setColorFields([...colorFields, { color: "#FFC778", endPoint: "50" }])
+    setColorFields([...colorFields, { color: "#ffffff", endPoint: "50" }])
   }
 
   const removeColorField = () => {
@@ -82,49 +81,75 @@ const LinerGradient = () => {
     <main>
       <div className="container">
         <div className="row d-flex justify-content-center">
-          <div className="col-lg-10">
-            <div className='bg-white'>
-              <div css={linerGradientStyle}></div>
+          <div className="col-lg-11">
+            <div className="box-head p-2 ps-3">
+              <h2 className='text-white'>liner-gradient</h2>
+            </div>
+            <div className='bg-white box' css={linerGradientStyle}>
+              <div className="row justify-content-center">
+                <div className="col-lg-11">
+                  <div className="p-2 my-2">
+                    <div className='btn-box d-flex justify-content-end p-1'>
+                      <button className='mx-1' onClick={copyToClipBoard}>copy</button>
+                      <button onClick={sendFavLinerGradient}>お気に入り</button>
+                    </div>
+                    <div className='code-box text-white p-2'>
+                      <pre>
+                        <code>
+                          {`liner-gradient(${generateGradientString()})`}
+                          background-color: #1B0E38;
+                          <br />
+                          border-radius: 10px 10px 0px 0px;
+                          <br />
+                          color: #90EE90;
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
 
-
-              <pre>
-                <code>
-                  {`liner-gradient(${generateGradientString()})`}
-                </code>
-              </pre>
-
-              <button onClick={copyToClipBoard}>copy</button>
-              <button onClick={sendFavLinerGradient}>お気に入り</button>
-
-              <div>
-                <h3>角度</h3>
-                <p>{degree}deg</p>
-                <input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} />
-              </div>
-
-              <button onClick={addColorField}>カラーフィールド+</button>
-              <button onClick={removeColorField}>カラーフィールド-</button>
-
-              {colorFields.map((CF, index) => (
-                <div style={{ border: '1px solid black' }} key={index}>
-                  <h3>colorField{index + 1}</h3>
-                  <div>
-
-                    <div>
-                      <h3>カラー</h3>
-                      <p>{CF.color}</p>
-                      <input type="color" value={CF.color} onChange={(e) => updateColorField(index, 'color', e.target.value)} />
+                  <div className='liner-box row g-0 justify-content-between p-2'>
+                    <div className="col-lg-6">
+                      <div className="row g-0 justify-content-center gap-3">
+                        <div className="col-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
+                        <div className="col-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
+                        <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
+                      </div>
+                    </div>
+                    <div className="col-lg-4 d-flex align-items-center justify-content-center">
+                      <button className='me-2' onClick={addColorField}>カラーフィールド+</button>
+                      <button onClick={removeColorField}>カラーフィールド-</button>
                     </div>
 
-                    <div>
-                      <h3>終始位置</h3>
-                      <p>{CF.endPoint}%</p>
-                      <input type="range" value={CF.endPoint} onChange={(e) => updateColorField(index, 'endPoint', e.target.value)} />
-                    </div>
+
 
                   </div>
+
+                  <div className="row g-0 gap-0">
+                    {colorFields.map((CF, index) => (
+                      <div className='liner-box my-2 col-lg-3 p-1' key={index}>
+                        <div className=''>
+                          <h3>colorField{index + 1}</h3>
+                          <div>
+
+                            <div>
+                              <h3>カラー</h3>
+                              <p>{CF.color}</p>
+                              <input type="color" value={CF.color} onChange={(e) => updateColorField(index, 'color', e.target.value)} />
+                            </div>
+
+                            <div>
+                              <h3>終始位置</h3>
+                              <p>{CF.endPoint}%</p>
+                              <input type="range" value={CF.endPoint} onChange={(e) => updateColorField(index, 'endPoint', e.target.value)} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
