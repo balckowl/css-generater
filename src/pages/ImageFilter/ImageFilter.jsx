@@ -1,10 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import './ImageFilter.scss'
 import { AuthContext } from '../../Context/AuthContext'
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../../api/firebase'
+import Prism from "prismjs";
+import 'prism-themes/themes/prism-vsc-dark-plus.min.css'
 
 const ImageFilter = () => {
 
@@ -19,10 +21,6 @@ const ImageFilter = () => {
     const [invert, setInvert] = useState(0)
 
     const { user } = useContext(AuthContext);
-
-    const imgFilterStyle = css({
-        filter: `blur(${blur}px) grayscale(${grayScale}%) sepia(${sepia}) brightness(${brightness}%) hue-rotate(${hueRotate}deg) saturate(${saturate}%) opacity(${opacity}%) contrast(${contrast}%) invert(${invert}%)`,
-    })
 
     const imgFilterString = () => {
         const updateValueFuncs = []
@@ -70,6 +68,14 @@ const ImageFilter = () => {
         }
 
     }
+
+    useEffect(() => {
+        Prism.highlightAll();
+    }, [imgFilterString()]);
+
+    const imgFilterStyle = css({
+        filter: `blur(${blur}px) grayscale(${grayScale}%) sepia(${sepia}) brightness(${brightness}%) hue-rotate(${hueRotate}deg) saturate(${saturate}%) opacity(${opacity}%) contrast(${contrast}%) invert(${invert}%)`,
+    })
 
     const copyToClipBoard = async () => {
         if (!imgFilterString()) {
@@ -192,20 +198,15 @@ const ImageFilter = () => {
                                             <button className='mx-1' onClick={copyToClipBoard}>copy</button>
                                             <button onClick={sendImgFilter}>お気に入り</button>
                                         </div>
-                                        <div className='code-box text-white p-2'>
+                                        <div className='code-box p-2'>
+                                            <div className='file-name'>sample.css</div>
                                             <pre>
-                                                <code>
+                                                <code className='language-css'>
                                                     {imgFilterString()}
-                                                    background-color: #1B0E38;
-                                                    <br />
-                                                    border-radius: 10px 10px 0px 0px;
-                                                    <br />
-                                                    color: #90EE90;
                                                 </code>
                                             </pre>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
