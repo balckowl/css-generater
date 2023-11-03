@@ -37,6 +37,19 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="col-sm-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <Link to="/textshadow">
+                                    <h3 className="card-title">text-shadow</h3>
+                                    <div className="card-icon text-center">
+                                        <i class="bi bi-body-text"></i>
+                                    </div>
+                                    <p className="card-text"></p>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                     <div className='col-sm-4'>
                         <div className="card">
                             <div className="card-body">
