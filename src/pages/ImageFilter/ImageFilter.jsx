@@ -35,31 +35,31 @@ const ImageFilter = () => {
             updateValueFuncs.push(`grayScale(${grayScale}px)`)
         }
 
-        if(sepia > 0){
+        if (sepia > 0) {
             updateValueFuncs.push(`sepia(${sepia}%)`)
         }
 
-        if(brightness != 100){
+        if (brightness != 100) {
             updateValueFuncs.push(`brightness(${brightness}%)`)
         }
 
-        if(hueRotate > 0){
+        if (hueRotate > 0) {
             updateValueFuncs.push(`hueRotate(${hueRotate}%)`)
         }
 
-        if(saturate != 100){
+        if (saturate != 100) {
             updateValueFuncs.push(`saturate(${saturate}%)`)
         }
 
-        if(opacity < 100){
+        if (opacity < 100) {
             updateValueFuncs.push(`opacity(${opacity}%)`)
         }
 
-        if(contrast != 100){
+        if (contrast != 100) {
             updateValueFuncs.push(`contrast(${contrast}%)`)
         }
 
-        if(invert > 0){
+        if (invert > 0) {
             updateValueFuncs.push(`invert(${invert}%)`)
         }
 
@@ -91,7 +91,7 @@ const ImageFilter = () => {
 
         const userDocSnap = await getDoc(userDocRef);
 
-        if(!imgFilterString()){
+        if (!imgFilterString()) {
             alert('パラメータが変更されていません。')
         }
 
@@ -113,75 +113,101 @@ const ImageFilter = () => {
         <main>
             <div className="container">
                 <div className="row d-flex justify-content-center">
-                    <div className="col-lg-10">
-                        <div className="bg-white">
+                    <div className="col-lg-11">
+                        <div className="box-head p-2 ps-3">
+                            <h2 className='text-white'>image-filter-generater</h2>
+                        </div>
+                        <div className="bg-white box">
+                            <div className="row justify-content-center px-1 g-0">
+                                <div className="col-lg-11">
+                                    <div className="row justify-content-between align-items-center g-0 py-lg-4 py-2 mx-lg-5 mx-2">
+                                        <div className="col-lg-6 img-input-box p-3 order-lg-1 order-2">
+                                            <div className="text-center">
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>ぼかし</h4></div>
+                                                    <div className="col-3"><p>{blur}px</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={blur} onChange={(e) => setBlur(e.target.value)} /></div>
+                                                </div>
 
-                            <div>
-                                <img src="https://picsum.photos/500/300" alt="" css={imgFilterStyle} />
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>グレー</h4></div>
+                                                    <div className="col-3"><p>{grayScale}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={grayScale} onChange={(e) => setGrayScale(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>セピア</h4></div>
+                                                    <div className="col-3"><p>{sepia}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={sepia} onChange={(e) => setSepia(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>明るさ</h4></div>
+                                                    <div className="col-3"><p>{brightness}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={brightness} min="0" max="200" onChange={(e) => setBrightness(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>色相</h4></div>
+                                                    <div className="col-3"><p>{hueRotate}°</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={hueRotate} min="0" max="360" onChange={(e) => setHueRotate(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>彩度</h4></div>
+                                                    <div className="col-3"><p>{saturate}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={saturate} min="0" max="1000" onChange={(e) => setSaturate(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>透明度</h4></div>
+                                                    <div className="col-3"><p>{opacity}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={opacity} onChange={(e) => setOpacity(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 mb-3 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>コントラスト</h4></div>
+                                                    <div className="col-3"><p>{contrast}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" min="0" max="1000" value={contrast} onChange={(e) => setContrast(e.target.value)} /></div>
+                                                </div>
+
+                                                <div className='row g-0 justify-content-center gap-3'>
+                                                    <div className="col-3"><h4>反転</h4></div>
+                                                    <div className="col-3"><p>{invert}%</p></div>
+                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={invert} onChange={(e) => setInvert(e.target.value)} /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-5 order-lg-2 order-1 mb-2 mb-lg-0">
+                                            <div className='d-flex justify-content-center'>
+                                                <div className="img-style-box p-4">
+                                                    <img src="https://picsum.photos/800/800" alt="" css={imgFilterStyle} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="p-2 mb-3">
+                                        <div className='btn-box d-flex justify-content-end p-1'>
+                                            <button className='mx-1' onClick={copyToClipBoard}>copy</button>
+                                            <button onClick={sendImgFilter}>お気に入り</button>
+                                        </div>
+                                        <div className='code-box text-white p-2'>
+                                            <pre>
+                                                <code>
+                                                    {imgFilterString()}
+                                                    background-color: #1B0E38;
+                                                    <br />
+                                                    border-radius: 10px 10px 0px 0px;
+                                                    <br />
+                                                    color: #90EE90;
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-
-                            <div>
-                                <h3>ぼかし</h3>
-                                <p>{blur}px</p>
-                                <input type="range" value={blur} onChange={(e) => setBlur(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>グレー</h3>
-                                <p>{grayScale}%</p>
-                                <input type="range" value={grayScale} onChange={(e) => setGrayScale(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>セピア</h3>
-                                <p>{sepia}%</p>
-                                <input type="range" value={sepia} onChange={(e) => setSepia(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>明るさ</h3>
-                                <p>{brightness}%</p>
-                                <input type="range" value={brightness} min="0" max="200" onChange={(e) => setBrightness(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>色相</h3>
-                                <p>{hueRotate}°</p>
-                                <input type="range" value={hueRotate} min="0" max="360" onChange={(e) => setHueRotate(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>彩度</h3>
-                                <p>{saturate}%</p>
-                                <input type="range" value={saturate} min="0" max="1000" onChange={(e) => setSaturate(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>透明度</h3>
-                                <p>{opacity}%</p>
-                                <input type="range" value={opacity} onChange={(e) => setOpacity(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>コントラスト</h3>
-                                <p>{contrast}%</p>
-                                <input type="range" min="0" max="1000" value={contrast} onChange={(e) => setContrast(e.target.value)} />
-                            </div>
-
-                            <div>
-                                <h3>反転</h3>
-                                <p>{invert}%</p>
-                                <input type="range" value={invert} onChange={(e) => setInvert(e.target.value)} />
-                            </div>
-
-                            <pre>
-                                <code>
-                                    {imgFilterString()}
-                                </code>
-                            </pre>
-
-                            <button onClick={copyToClipBoard}>copy</button>
-                            <button onClick={sendImgFilter}>お気に入り</button>
                         </div>
                     </div>
                 </div>
