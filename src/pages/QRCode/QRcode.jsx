@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './QRcode.scss'
 import QRCode from 'qrcode.react'
+import CommonMeta from '../../components/ CommonMeta/CommonMeta'
 
 const QRcode = () => {
 
@@ -23,6 +24,9 @@ const QRcode = () => {
 
     return (
         <main>
+
+            <CommonMeta title="qrcode | css generater"/>
+
             <div className="container">
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-11">

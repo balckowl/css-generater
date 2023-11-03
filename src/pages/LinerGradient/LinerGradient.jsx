@@ -5,6 +5,9 @@ import './LinerGradient.scss'
 import { AuthContext } from '../../Context/AuthContext';
 import { db } from '../../../api/firebase';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
+import Prism from "prismjs";
+import 'prism-themes/themes/prism-vsc-dark-plus.min.css'
+import CommonMeta from '../../components/ CommonMeta/CommonMeta';
 
 const LinerGradient = () => {
 
@@ -22,6 +25,10 @@ const LinerGradient = () => {
     console.log(baseGradient + colorFieldGradient)
     return baseGradient + colorFieldGradient;
   };
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [generateGradientString()]);
 
   const linerGradientStyle = css({
     width: "100%",
@@ -79,6 +86,8 @@ const LinerGradient = () => {
 
   return (
     <main>
+      
+      <CommonMeta title="liner-gradient | css generater"/>
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-11">
@@ -94,14 +103,10 @@ const LinerGradient = () => {
                       <button onClick={sendFavLinerGradient}>お気に入り</button>
                     </div>
                     <div className='code-box text-white p-2'>
-                      <pre>
-                        <code>
+                      <div className='file-name'>sample.css</div>
+                      <pre className="line-numbers">
+                        <code className='language-css'>
                           {`liner-gradient(${generateGradientString()})`}
-                          background-color: #1B0E38;
-                          <br />
-                          border-radius: 10px 10px 0px 0px;
-                          <br />
-                          color: #90EE90;
                         </code>
                       </pre>
                     </div>

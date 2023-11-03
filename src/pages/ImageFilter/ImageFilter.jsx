@@ -7,6 +7,7 @@ import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../../api/firebase'
 import Prism from "prismjs";
 import 'prism-themes/themes/prism-vsc-dark-plus.min.css'
+import CommonMeta from '../../components/ CommonMeta/CommonMeta'
 
 const ImageFilter = () => {
 
@@ -117,6 +118,8 @@ const ImageFilter = () => {
 
     return (
         <main>
+
+            <CommonMeta title="img-filter | css generater" />
             <div className="container">
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-11">
@@ -200,7 +203,7 @@ const ImageFilter = () => {
                                         </div>
                                         <div className='code-box p-2'>
                                             <div className='file-name'>sample.css</div>
-                                            <pre>
+                                            <pre className="line-numbers">
                                                 <code className='language-css'>
                                                     {imgFilterString()}
                                                 </code>

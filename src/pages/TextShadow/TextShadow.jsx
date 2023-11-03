@@ -1,10 +1,16 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import './TextShadow.scss'
 import { AuthContext } from '../../Context/AuthContext';
 import { db } from '../../../api/firebase';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
+import Prism from 'prismjs'
+import 'prismjs/plugins/toolbar/prism-toolbar.min.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers'
+import 'prism-themes/themes/prism-vsc-dark-plus.min.css'
+import CommonMeta from '../../components/ CommonMeta/CommonMeta';
 
 const Textshadow = () => {
 
@@ -19,6 +25,10 @@ const Textshadow = () => {
   const textShadowStyle = css({
     textShadow: textShadowCode
   })
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [textShadowCode]);
 
   const copyToClipBoard = async () => {
     try {
@@ -51,7 +61,10 @@ const Textshadow = () => {
   }
 
   return (
-    <div>
+    <main>
+
+      <CommonMeta title="text-shadow | css generater"/>
+
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-11">
@@ -125,7 +138,7 @@ const Textshadow = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
