@@ -118,12 +118,14 @@ const TextShadow = () => {
                     </div>
 
                     <div className="p-2 mb-3">
-                      <div className='btn-box d-flex justify-content-end p-1'>
-                        <button className='mx-1' onClick={copyToClipBoard}>copy</button>
-                        <button onClick={sendFavTextShadow}>お気に入り</button>
+                      <div className='btn-box d-flex justify-content-between p-1 pt-2'>
+                        <p className='ms-2'>sample.css</p>
+                        <div className='d-flex'>
+                          <button className='mx-1' onClick={copyToClipBoard}>copy</button>
+                          <button onClick={sendFavTextShadow}>お気に入り</button>
+                        </div>
                       </div>
-                      <div className='code-box p-2'>
-                        <div className='file-name'>sample.css</div>
+                      <div className='css-box p-2'>
                         <pre className="line-numbers">
                           <code className='language-css'>
                             {`box-shadow: ${textShadowCode}`}
