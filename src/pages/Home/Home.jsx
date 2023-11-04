@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import './Home.scss'
-import { Link } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthContext';
 import CommonMeta from '../../components/ CommonMeta/CommonMeta';
 
