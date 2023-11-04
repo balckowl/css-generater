@@ -7,7 +7,7 @@ import BoxShadow from './pages/BoxShadow/BoxShadow'
 import LinerGradient from './pages/LinerGradient/LinerGradient'
 import QRcode from './pages/QRCode/QRcode'
 import ImageFilter from './pages/ImageFilter/ImageFilter'
-import TextShadow from './pages/TextShadow/TextShadow'
+import TextShadow from './pages/TextShadow/Textshadow'
 import MyPage from './pages/MyPage/MyPage'
 
 function App() {
