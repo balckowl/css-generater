@@ -26,18 +26,20 @@ const Header = () => {
                     <div className="d-flex gap-2">
                         {!user ? <LoginBtn /> : <LogoutBtn />}
                         <div className="vr text-white" style={{ width: '3px' }}></div>
-                        <div className="align-self-center d-none d-sm-block text-white">
-                            <a className="nav-link" href="#">My account</a>
-                        </div>
+                        {!user ? (<></>) : (
+                            <Link className="align-self-center d-none d-sm-block text-white" to="/mypage">
+                                <a className="nav-link" href="#">My Page</a>
+                            </Link>
+                        )}
                         <div className="align-self-center">
                             <div className="person-icon pe-2">
-                                {user ? <img src={user.photoURL} alt=""/> :<i className="bi bi-person-circle"></i>}
+                                {user ? <img src={user.photoURL} alt="" /> : <i className="bi bi-person-circle"></i>}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </div >
+        </header >
     )
 }
 
