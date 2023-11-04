@@ -120,8 +120,8 @@ const BoxShadow = () => {
                     </div>
 
                     <div className="p-2 mb-3">
-                      <div className='btn-box d-flex justify-content-between p-1'>
-                        <p>ssample.css</p>
+                      <div className='btn-box d-flex justify-content-between p-1 pt-2'>
+                        <p className='ms-2'>sample.css</p>
                         <div className='d-flex'>
                           <button className='mx-1' onClick={copyToClipBoard}>copy</button>
                           <button onClick={sendFavBoxShadow}>お気に入り</button>

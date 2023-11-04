@@ -98,13 +98,15 @@ const LinerGradient = () => {
             <div className='bg-white box' css={linerGradientStyle}>
               <div className="row justify-content-center">
                 <div className="col-lg-11">
-                  <div className="p-2 my-2">
-                    <div className='btn-box d-flex justify-content-end p-1'>
-                      <button className='mx-1' onClick={copyToClipBoard}>copy</button>
-                      <button onClick={sendFavLinerGradient}>お気に入り</button>
+                  <div className="p-2 mb-3">
+                    <div className='btn-box d-flex justify-content-between p-1 pt-2'>
+                      <p className='ms-2'>sample.css</p>
+                      <div className='d-flex'>
+                        <button className='mx-1' onClick={copyToClipBoard}>copy</button>
+                        <button onClick={sendFavLinerGradient}>お気に入り</button>
+                      </div>
                     </div>
-                    <div className='code-box text-white p-2'>
-                      <div className='file-name'>sample.css</div>
+                    <div className='css-box p-2'>
                       <pre className="line-numbers">
                         <code className='language-css'>
                           {`liner-gradient(${generateGradientString()})`}
@@ -114,43 +116,47 @@ const LinerGradient = () => {
                   </div>
 
                   <div className='row justify-content-center g-0 mx-2 liner-box p-2'>
-                      <div className="row g-0 justify-content-center gap-3">
-                        <div className="col-lg-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
-                        <div className="col-lg-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
-                        <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
-                      </div>
-                  
+                    <div className="row g-0 justify-content-center gap-3">
+                      <div className="col-lg-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
+                      <div className="col-lg-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
+                      <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
+                    </div>
+
                   </div>
 
-                  <div className="row g-0 gap-1 mx-2">
+                  <div className="row g-0 gap-0 mx-2">
                     {colorFields.map((CF, index) => (
                       <div className='my-2 col-lg-3 liner-box p-1' key={index}>
-                            <h3>colorField{index + 1}</h3>
-                            <div>
-                              <div>
-                                <h3>カラー</h3>
-                                <p>{CF.color}</p>
-                                <input type="color" value={CF.color} onChange={(e) => updateColorField(index, 'color', e.target.value)} />
-                              </div>
-
-                              <div>
-                                <h3>終始位置</h3>
-                                <p>{CF.endPoint}%</p>
-                                <input type="range" value={CF.endPoint} onChange={(e) => updateColorField(index, 'endPoint', e.target.value)} />
-                              </div>
-                            </div>
+                        <h3>colorField{index + 1}</h3>
+                        <div>
+                          <div>
+                            <h3>カラー</h3>
+                            <p>{CF.color}</p>
+                            <input type="color" value={CF.color} onChange={(e) => updateColorField(index, 'color', e.target.value)} />
                           </div>
+
+                          <div>
+                            <h3>終始位置</h3>
+                            <p>{CF.endPoint}%</p>
+                            <input type="range" value={CF.endPoint} onChange={(e) => updateColorField(index, 'endPoint', e.target.value)} />
+                          </div>
+                        </div>
+                      </div>
                     ))}
-                    <div className='my-2 col-lg-1 handle-filed'>
+
+                    
+                        <div className='col-lg-1 my-2'>
                       <div onClick={removeColorField} className="delite d-flex align-items-center justify-content-center">
                         <p>ー</p>
                       </div>
                     </div>
-                    <div onClick={addColorField} className='my-2 col-lg-1 handle-filed'>
+                    <div onClick={addColorField} className='col-lg-1 my-2'>
                       <div className="next d-flex align-items-center justify-content-center">
                         <p>＋</p>
                       </div>
                     </div>
+
+
                   </div>
 
                 </div>
