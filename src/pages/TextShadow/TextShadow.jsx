@@ -12,7 +12,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers'
 import 'prism-themes/themes/prism-vsc-dark-plus.min.css'
 import CommonMeta from '../../components/ CommonMeta/CommonMeta';
 
-const Textshadow = () => {
+const TextShadow = () => {
 
   const { user } = useContext(AuthContext);
 
@@ -142,4 +142,4 @@ const Textshadow = () => {
   )
 }
 
-export default Textshadow
+export default TextShadow
