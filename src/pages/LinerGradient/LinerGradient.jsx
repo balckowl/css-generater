@@ -86,8 +86,8 @@ const LinerGradient = () => {
 
   return (
     <main>
-      
-      <CommonMeta title="liner-gradient | css generater" imgUrl="liner-gradient.png"/>
+
+      <CommonMeta title="liner-gradient | css generater" imgUrl="liner-gradient.png" />
 
       <div className="container">
         <div className="row d-flex justify-content-center">
@@ -113,32 +113,20 @@ const LinerGradient = () => {
                     </div>
                   </div>
 
-                  <div className='row justify-content-center'>
-                    <div className='col-lg-10 p-2 liner-box'>
-                      <div className="row g-0 justify-content-between">
-                        <div className="col-lg-6">
-                          <div className="row g-0 justify-content-center gap-3">
-                            <div className="col-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
-                            <div className="col-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
-                            <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
-                          </div>
-                        </div>
-                        <div className="col-lg-4 d-flex align-items-center justify-content-center">
-                          <button className='me-2' onClick={addColorField}>カラーフィールド+</button>
-                          <button onClick={removeColorField}>カラーフィールド-</button>
-                        </div>
+                  <div className='row justify-content-center g-0 mx-2 liner-box p-2'>
+                      <div className="row g-0 justify-content-center gap-3">
+                        <div className="col-lg-3 d-flex align-items-center justify-content-center"><h3>角度</h3></div>
+                        <div className="col-lg-3 d-flex align-items-center justify-content-center"><p>{degree}deg</p></div>
+                        <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={degree} min="-180" max="180" onChange={(e) => setDegree(e.target.value)} /></div>
                       </div>
-                    </div>
+                  
                   </div>
 
-                  <div className="row g-0 gap-0">
+                  <div className="row g-0 gap-1 mx-2">
                     {colorFields.map((CF, index) => (
-                      <div className='my-2 col-lg-3' key={index}>
-                        <div className='row d-flex align-items-center justify-content-center g-0'>
-                          <div className="col-11 liner-box p-1">
+                      <div className='my-2 col-lg-3 liner-box p-1' key={index}>
                             <h3>colorField{index + 1}</h3>
                             <div>
-
                               <div>
                                 <h3>カラー</h3>
                                 <p>{CF.color}</p>
@@ -152,9 +140,17 @@ const LinerGradient = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
                     ))}
+                    <div className='my-2 col-lg-1 handle-filed'>
+                      <div onClick={removeColorField} className="delite d-flex align-items-center justify-content-center">
+                        <p>ー</p>
+                      </div>
+                    </div>
+                    <div onClick={addColorField} className='my-2 col-lg-1 handle-filed'>
+                      <div className="next d-flex align-items-center justify-content-center">
+                        <p>＋</p>
+                      </div>
+                    </div>
                   </div>
 
                 </div>

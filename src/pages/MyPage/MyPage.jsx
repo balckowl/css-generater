@@ -11,7 +11,7 @@ const MyPage = () => {
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="box-head p-2 ps-3">
-              <h2 className='text-white'>My-Page</h2>
+              <h2 className='text-white'>My Page</h2>
             </div>
             <div className="row g-0">
               <div className="col-lg-3 bg-white">

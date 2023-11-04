@@ -27,9 +27,7 @@ const Header = () => {
                         {!user ? <LoginBtn /> : <LogoutBtn />}
                         <div className="vr text-white" style={{ width: '3px' }}></div>
                         {!user ? (<></>) : (
-                            <Link className="align-self-center d-none d-sm-block text-white" to="/mypage">
-                                <a className="nav-link" href="#">My Page</a>
-                            </Link>
+                            <Link className="align-self-center d-none d-sm-block text-white" to="/mypage">My Page</Link>
                         )}
                         <div className="align-self-center">
                             <div className="person-icon pe-2">
