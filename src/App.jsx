@@ -8,6 +8,7 @@ import LinerGradient from './pages/LinerGradient/LinerGradient'
 import QRcode from './pages/QRCode/QRcode'
 import ImageFilter from './pages/ImageFilter/ImageFilter'
 import Textshadow from './pages/TextShadow/Textshadow'
+import MyPage from './pages/MyPage/MyPage'
 
 function App() {
 
@@ -19,9 +20,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/boxshadow" element={<BoxShadow />} />
           <Route path="/textshadow" element={<Textshadow />} />
-          <Route path="/linergradient" element={<LinerGradient />}/>
-          <Route path="/imgfilter" element={<ImageFilter />}/>
-          <Route path="/qrcode" element={<QRcode />}/>
+          <Route path="/linergradient" element={<LinerGradient />} />
+          <Route path="/imgfilter" element={<ImageFilter />} />
+          <Route path="/qrcode" element={<QRcode />} />
+          <Route path="/mypage" element={<MyPage />} />
         </Routes>
         <Footer />
       </Router>
