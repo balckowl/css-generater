@@ -25,7 +25,7 @@ const QRcode = () => {
     return (
         <main>
 
-            <CommonMeta title="qrcode | css generater"/>
+            <CommonMeta title="qrcode | css generater" imgUrl="qrcode-generator.png"/>
 
             <div className="container">
                 <div className="row d-flex justify-content-center">

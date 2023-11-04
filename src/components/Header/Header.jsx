@@ -16,7 +16,7 @@ const Header = () => {
                     <div className="d-flex flex-grow-1">
                         <div className="align-self-center">
                             <div className="top-icon px-2">
-                                <i className="bi bi-gear"></i>
+                                <img src="/images/CSSGenerator-icon.png" alt="" />
                             </div>
                         </div>
                         <div className="top-name align-self-center fs-2">

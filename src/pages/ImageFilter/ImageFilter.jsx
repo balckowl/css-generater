@@ -119,7 +119,7 @@ const ImageFilter = () => {
     return (
         <main>
 
-            <CommonMeta title="img-filter | css generater" />
+            <CommonMeta title="img-filter | css generater" imgUrl="img-filter.png"/>
             <div className="container">
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-11">

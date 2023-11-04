@@ -87,7 +87,8 @@ const LinerGradient = () => {
   return (
     <main>
       
-      <CommonMeta title="liner-gradient | css generater"/>
+      <CommonMeta title="liner-gradient | css generater" imgUrl="liner-gradient.png"/>
+
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-11">

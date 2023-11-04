@@ -63,7 +63,7 @@ const Textshadow = () => {
   return (
     <main>
 
-      <CommonMeta title="text-shadow | css generater"/>
+      <CommonMeta title="text-shadow | css generater" imgUrl="text-shadow.png" />
 
       <div className="container">
         <div className="row d-flex justify-content-center">

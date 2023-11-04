@@ -67,7 +67,7 @@ const BoxShadow = () => {
   return (
     <main>
 
-      <CommonMeta title="box-shadow | css generater"/>
+      <CommonMeta title="box-shadow | css generater" imgUrl="box-shadow.png"/>
 
       <div className="container">
         <div className="row d-flex justify-content-center">
