@@ -43,7 +43,7 @@ const QRcode = () => {
 
                                                     <div className='mb-4'>
                                                         <h3 className='mb-1'>URL</h3>
-                                                        <input type="text" size={30} value={url} onChange={(e) => setURL(e.target.value)} />
+                                                        <input type="text" value={url} onChange={(e) => setURL(e.target.value)} />
                                                     </div>
 
                                                     <div className='row g-0 mb-4 justify-content-center gap-0 color-style'>

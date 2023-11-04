@@ -133,57 +133,57 @@ const ImageFilter = () => {
                                         <div className="col-lg-6 img-input-box p-3 order-lg-1 order-2">
                                             <div className="text-center">
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>ぼかし</h4></div>
-                                                    <div className="col-3"><p>{blur}px</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={blur} onChange={(e) => setBlur(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>ぼかし</h4></div>
+                                                    <div className="col-lg-3"><p>{blur}px</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={blur} onChange={(e) => setBlur(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>グレー</h4></div>
-                                                    <div className="col-3"><p>{grayScale}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={grayScale} onChange={(e) => setGrayScale(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>グレー</h4></div>
+                                                    <div className="col-lg-3"><p>{grayScale}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={grayScale} onChange={(e) => setGrayScale(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>セピア</h4></div>
-                                                    <div className="col-3"><p>{sepia}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={sepia} onChange={(e) => setSepia(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>セピア</h4></div>
+                                                    <div className="col-lg-3"><p>{sepia}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={sepia} onChange={(e) => setSepia(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>明るさ</h4></div>
-                                                    <div className="col-3"><p>{brightness}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={brightness} min="0" max="200" onChange={(e) => setBrightness(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>明るさ</h4></div>
+                                                    <div className="col-lg-3"><p>{brightness}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={brightness} min="0" max="200" onChange={(e) => setBrightness(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>色相</h4></div>
-                                                    <div className="col-3"><p>{hueRotate}°</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={hueRotate} min="0" max="360" onChange={(e) => setHueRotate(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>色相</h4></div>
+                                                    <div className="col-lg-3"><p>{hueRotate}°</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={hueRotate} min="0" max="360" onChange={(e) => setHueRotate(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>彩度</h4></div>
-                                                    <div className="col-3"><p>{saturate}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={saturate} min="0" max="1000" onChange={(e) => setSaturate(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>彩度</h4></div>
+                                                    <div className="col-lg-3"><p>{saturate}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={saturate} min="0" max="1000" onChange={(e) => setSaturate(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>透明度</h4></div>
-                                                    <div className="col-3"><p>{opacity}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={opacity} onChange={(e) => setOpacity(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>透明度</h4></div>
+                                                    <div className="col-lg-3"><p>{opacity}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={opacity} onChange={(e) => setOpacity(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 mb-3 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>コントラスト</h4></div>
-                                                    <div className="col-3"><p>{contrast}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" min="0" max="1000" value={contrast} onChange={(e) => setContrast(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>コントラスト</h4></div>
+                                                    <div className="col-lg-3"><p>{contrast}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" min="0" max="1000" value={contrast} onChange={(e) => setContrast(e.target.value)} /></div>
                                                 </div>
 
                                                 <div className='row g-0 justify-content-center gap-3'>
-                                                    <div className="col-3"><h4>反転</h4></div>
-                                                    <div className="col-3"><p>{invert}%</p></div>
-                                                    <div className="col-4 d-flex align-items-center justify-content-center"><input type="range" value={invert} onChange={(e) => setInvert(e.target.value)} /></div>
+                                                    <div className="col-lg-3"><h4>反転</h4></div>
+                                                    <div className="col-lg-3"><p>{invert}%</p></div>
+                                                    <div className="col-lg-4 d-flex align-items-center justify-content-center"><input type="range" value={invert} onChange={(e) => setInvert(e.target.value)} /></div>
                                                 </div>
                                             </div>
                                         </div>
