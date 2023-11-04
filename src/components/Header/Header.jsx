@@ -20,7 +20,7 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="top-name align-self-center fs-2">
-                            <Link className="navbar-brand" to="/">CSS Generater</Link>
+                            <Link className="navbar-brand" to="/">Helpee</Link>
                         </div>
                     </div>
                     <div className="d-flex gap-2">

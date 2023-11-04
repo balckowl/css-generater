@@ -12,10 +12,10 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="top-name align-self-center fs-2">
-                        <a className="navbar-brand" href="#">CSS Generater</a>
+                        <a className="navbar-brand" href="#">Helpee</a>
                     </div>
                 </div>
-                <p className='text-center text-white'>&copy; Team Name 2023</p>
+                <p className='text-center text-white'>&copy; 激辛フルーツ 2023</p>
             </div>
         </footer>
     )
